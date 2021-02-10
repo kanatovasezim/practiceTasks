@@ -26,9 +26,12 @@
         if (itemElements[i].innerHTML.indexOf("Cola 1.5 l.") !== -1) {
             itemElements[i].remove();
         } else if (itemElements[i].innerHTML.indexOf("Chocolate bar") !== -1){
-            var textnode = document.createTextNode("Chocolate bar");
-            var textnode2 = document.createTextNode("Canned Fish");
-            itemElements[i].parentNode.replaceChild(textnode, textnode2);
+            let span = document.createElement("span");
+            span.textContent='x 4';
+            span.classList.add('qty');
+            let div = itemElements[i];
+            div.textContent= "Canned Fish" + span.textContent;
+            itemElements[i].replaceChild(div, itemElements[i]);
         }
     }
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</div>
+</body>
+<script>
+    // Запрашивайте содержимое пункта у пользователя с помощью prompt.
+    //     Создавайте пункт и добавляйте его к UL.
+    //     Процесс прерывается, когда пользователь нажимает "Отмена" или вводит пустую строку.
+    let element = document.querySelector('body');
+    let answer;
+    do{
+        answer = prompt('Добавьте название для задание: ', '');
+        if (answer) {
+            let ul = document.createElement('ul');
+            let li = document.createElement('li');
+            li.textContent = answer;
+            ul.appendChild(li);
+            element.append(ul);
+        }
+    }while (answer);
+
+</script>
+</html>

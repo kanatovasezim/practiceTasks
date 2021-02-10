@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // Write a JavaScript program to display the current day and time in the following format.
+    //     Sample Output :
+    //     Today is : Friday.
+    //     Current time is : 4 PM : 50 : 22
+    let today = new Date();
+    let currWeekDay = today.getDay();
+    let weekdaysList = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+    alert("Today is : " + weekdaysList[currWeekDay] + ".");
+    let currHour = today.getHours();
+    let time = (currHour > 11) ? 'PM' : 'AM';
+    let currMinutes = today.getMinutes();
+    let currSeconds = today.getSeconds();
+    alert("Current time is : " + ((currHour > 12) ? currHour-12: currHour) +" "+ time + " : " + currMinutes + " : " + currSeconds)
+
+    // Write a JavaScript function that reverse a number.
+    //     Example x = 32243;
+    // Expected Output : 34223
+    let x = 32243;
+    alert(String(x).split("").reverse().join(""))
+
+    // Write a JavaScript program to calculate the factorial of a number. In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n.
+    //     For example, 5! = 5 x 4 x 3 x 2 x 1 = 120
+    function calculateFactorial(x){
+        if (x>0){
+            let total=1;
+            for (let i = x; i > 0; i--) {
+                total *= i;
+            }
+            return total;
+        }
+    }
+    alert(calculateFactorial(5))
+
+    // Write a JavaScript program that accept two integers and display the larger.
+    let x = prompt("Enter a number X: ", 2);
+    let y = prompt("Enter a number Y: ", 3);
+    alert('The largest is: ' + (Math.max(+x,+y)))
+
+    // Write a simple JavaScript program to join all elements of the following array into a string.
+    //     Sample array : myColor = ["Red", "Green", "White", "Black"];
+    // Expected Output :
+    //     "Red,Green,White,Black"
+
+    let myColor = ["Red", "Green", "White", "Black"];
+    let str = '"';
+    for (let i = 0; i < myColor.length; i++) {
+        str+=myColor[i] + ((i !== myColor.length-1) ? ',' : '"');
+    }
+    alert(str)
+
+    // Write a JavaScript function to get the month name from a particular date.
+    //     Test Data :
+    //     console.log(month_name(new Date("10/11/2009")));
+    // console.log(month_name(new Date("11/13/2014")));
+    // Output :
+    //     "October"
+    // "November"
+    function month_name(date){
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ];
+        let month = date.getMonth();
+        return monthNames[month];
+    }
+    alert(month_name(new Date("10/11/2009")));
+
+    // Write a JavaScript program to test the first character of a string is uppercase or not
+    function isUpper(str){
+        return (str.charAt(0) >= 'A' && str.charAt(0) < 'a');
+    }console.log(isUpper('sagas'));
+
+    // Write a JavaScript program to draw a smile
+    function drawSmile(mood){
+        switch (mood){
+            case 'sad':
+                return '=(';
+            case 'ok':
+                return '=|';
+            case 'excellent':
+                return '=)';
+            default:
+                return '=S';
+        }
+    }
+    console.log(drawSmile('sad'));
+
+</script>

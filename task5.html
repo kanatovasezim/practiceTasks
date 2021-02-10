@@ -20,14 +20,15 @@
     // Для удаления использовать .remove()
     // Для замены использовать .replaceChild()
     // Подразумевается, что вышеуказанная разметка находится внутри тега <body>.
-    let itemElements = document.getElementsByClassName('item');
+    let elementList = document.querySelector('body');
+    let itemElements = elementList.getElementsByClassName('item');
     for (let i = 0; i < itemElements.length; i++) {
         if (itemElements[i].innerHTML.indexOf("Cola 1.5 l.") !== -1) {
             itemElements[i].remove();
         } else if (itemElements[i].innerHTML.indexOf("Chocolate bar") !== -1){
             var textnode = document.createTextNode("Chocolate bar");
             var textnode2 = document.createTextNode("Canned Fish");
-            itemElements[i].replaceChild(textnode, textnode2);
+            itemElements[i].parentNode.replaceChild(textnode, textnode2);
         }
     }
 

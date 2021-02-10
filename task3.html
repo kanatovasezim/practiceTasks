@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="task1">
+    <div id="string-1">Ядра в вёдра, выдру в тундру!</div>
+    <div id="string-2">Выдрав с выдры в тундре гетры</div>
+    <div id="string-3">В недрах тундры, выдры в гетрах</div>
+    <div id="string-4">Вытру гетрой выдре морду</div>
+    <div id="string-5">Тырят в вёдра ядра кедров!</div>
+    <div id="string-6">Вытру выдрой ядра кедров</div>
+</div>
+<div class="task2">
+    <div class="element">Element 1</div>
+    <div class="element">Element 2</div>
+    <div class="element">Element 3</div>
+    <div class="element">Element 4</div>
+    <div class="element">Element 5</div>
+    <div class="element">Element 6</div>
+</div>
+<div class="task3">
+    <ol id="todo-list">
+        <li class="task">Buy lemonade</li>
+        <li class="task">Make toasts</li>
+        <li class="task">Repair car</li>
+        <li class="task">Play games</li>
+        <li class="task">Pet a cat</li>
+    </ol>
+</div>
+</body>
+<script>
+    // task1
+    let x = [3, 5, 2, 6, 4, 1];
+    getSentenceById(x);
+
+    function getSentenceById(x) {
+        for (let i = 1; i <= x.length; i++) {
+            console.log(document.getElementById('string-' + i).innerHTML);
+        }
+    }
+
+    // task2
+    for (let i = 0; i < 6; i++) {
+        let currElement = document.getElementsByClassName('element').item(i);
+        if (currElement.innerHTML.split(" ")[1] <= 3) {
+            currElement.style.color = 'red';
+        } else {
+            currElement.style.color = 'green';
+        }
+    }
+
+    // task3
+    let tasks = ['Buy lemonade', 'Make toasts', 'Repair car', 'Play games', 'Pet a cat'];
+    let ol = document.getElementById("todo-list");
+    for (let i = 0; i < tasks.length; i++) {
+        const li = document.createElement('li');
+        li.innerHTML = tasks[i];
+        ol.appendChild(li);
+    }
+
+</script>
+</html>

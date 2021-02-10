@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="cart-items">
+    <div class="item">Milk 1 l.<span class="qty">x 2</span></div>
+    <div class="item">Cola 1.5 l. <span class="qty">x 1</span></div>
+    <div class="item">Bread<span class="qty">x 2</span></div>
+    <div class="item">Cheese<span class="qty">x 1</span></div>
+    <div class="item">Chocolate bar<span class="qty">x 3</span></div>
+</div>
+</body>
+<script>
+    // Необходимо с помощью JavaScript удалить элемент "Cola 1.5 l" и заменить товар "Chocolate bar" на "Canned Fish", количеством 4 штуки.
+    //
+    //     Указания:
+    // Для удаления использовать .remove()
+    // Для замены использовать .replaceChild()
+    // Подразумевается, что вышеуказанная разметка находится внутри тега <body>.
+    let itemElements = document.getElementsByClassName('item');
+    for (let i = 0; i < itemElements.length; i++) {
+        if (itemElements[i].innerHTML.indexOf("Cola 1.5 l.") !== -1) {
+            itemElements[i].remove();
+        } else if (itemElements[i].innerHTML.indexOf("Chocolate bar") !== -1){
+            var textnode = document.createTextNode("Chocolate bar");
+            var textnode2 = document.createTextNode("Canned Fish");
+            itemElements[i].replaceChild(textnode, textnode2);
+        }
+    }
+
+</script>
+</html>
